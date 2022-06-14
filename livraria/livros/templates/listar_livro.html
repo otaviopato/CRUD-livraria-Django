@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+</head>
+<body>
+    <h1><center>Livros</h1>
+    <a href="/">Inicio</a><br>
+    {% csrf_token %}
+    <h4>Livros</h4>
+    <button onclick="location.href='/livro/novo'" type="button">Cadastrar um livro</button>
+    <ul>
+        {% for livro in livros %}
+            <li> <a href="/livro/detalhes/{{ livro.id }}">Detalhes</a> | <a href="/livro/atualizar/{{ livro.id }}">Atualizar</a> | <a data-confirm="Deseja realmente deletar o livro{{livro.nome}} ?" href="/livro/deletar/{{ livro.id }}" rel="nofollow">Deletar</a> | <a href="/livro/vincular-autor/{{ livro.id }}">Vincular a autor</a> | {{ livro.nome }} </li>
+        {% endfor %}
+    </ul>
+    <hr>
+</body>
+</html>

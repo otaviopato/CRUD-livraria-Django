@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+</head>
+<body>
+    <h1><center>Livros</h1>
+    <a href="/livro/listar">Voltar</a><br>
+    <form action="" method='POST'>
+        {% csrf_token %}
+        <h5>Criar Livro</h5>
+        <table>
+            <tr>
+                <td>{{ formLivro.nome.label_tag }}</td>
+                <td>{{ formLivro.nome }}</td>
+            </tr>
+            <tr>
+                <td>{{ formLivro.data_criacao.label_tag }}</td>
+                <td>{{ formLivro.data_criacao }}</td>
+            </tr>
+            <tr>
+                <td>{{ formLivro.numero_pagina.label_tag }}</td>
+                <td>{{ formLivro.numero_pagina }}</td>
+            </tr>
+            <tr>
+                <td>{{ formLivro.produtora.label_tag }}</td>
+                <td>{{ formLivro.produtora }}</td>
+            </tr>
+            <hr>
+        </table> 
+        <button type="submit">Salvar Livro</button> 
+        <hr>
+    </form>
+</body>
+</html>

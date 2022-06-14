@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincular autor a livro</title>
+</head>
+<body>
+    <h1><center>Autores de: {{livro.nome}}</h1>
+        <a href="/livro/listar">Voltar</a><br>
+    {% csrf_token %}
+    <h4>Livros</h4>
+    <input></input>
+    <button onclick="" type="button">Vincular autor</button>
+    <ul>
+        {% for autor in autores %}
+            <li> {{ autor.nome }} </li>
+        {% endfor %}
+    </ul>
+    <hr>
+</body>
+</html>

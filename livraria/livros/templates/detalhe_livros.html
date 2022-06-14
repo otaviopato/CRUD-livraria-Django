@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros</title>
+</head>
+<body>
+    <h1><center>Livros</h1>
+    <a href="/livro/listar">Voltar</a><br>
+    {% csrf_token %}
+    <h5>Detalhes</h5>
+    <table>
+        <tr>
+            <td><b>Id</b></td>
+            <td>{{ livro.id }}</td>
+        </tr>
+        <tr>
+            <td><b>Nome</b></td>
+            <td>{{ livro.nome }}</td>
+        </tr>
+        <tr>
+            <td><b>Data criação</b></td>
+            <td>{{ livro.data_criacao }}</td>
+        </tr>
+        <tr>
+            <td><b>Número de páginas</b></td>
+            <td>{{ livro.numero_pagina }}</td>
+        </tr>
+        <tr>
+            <td><b>Produtora</b></td>
+            <td>{{ livro.produtora }}</td>
+        <tr>
+        <tr>
+            <td><b>Criado em</b></td>
+            <td>{{ livro.criado_em }}</td>
+        <tr>
+        <tr>
+            <td><b>Atualizado em</b></td>
+            <td>{{ livro.atualizado_em }}</td>
+        <tr>
+        <hr>
+    </table>
+    <hr>
+</body>
+</html>

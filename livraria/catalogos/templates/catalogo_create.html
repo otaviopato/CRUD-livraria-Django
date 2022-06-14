@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo create</title>
+</head>
+<body>
+    <h1>Criar catálogo</h1>
+    <form action="" method='POST'>
+        {% csrf_token %}
+        <table>
+        <tr>
+            <td>{{ formCatalogo.nome.label_tag }}</td>
+            <td>{{ formCatalogo.nome }}</td>
+        </tr>
+        </table>
+    <button type="submit">Salvar Catalogo</button> 
+    </form>
+    <div>
+        <ul>
+            {% for catalogo in catalogo%}
+                <li>{{ catalogo.nome }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+</body>
+</html>
